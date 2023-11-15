@@ -24,6 +24,6 @@ class MainActivity : AppCompatActivity() {
         peliculasAdapter.add(pelicula3)
         peliculasAdapter.add(pelicula4)
         recyclerView.adapter = PeliculasAdapter(peliculasAdapter);
-        recyclerView.layoutManager = GridLayoutManager(this, 1);
+        recyclerView.layoutManager = GridLayoutManager(this, 2);
     }
 }
