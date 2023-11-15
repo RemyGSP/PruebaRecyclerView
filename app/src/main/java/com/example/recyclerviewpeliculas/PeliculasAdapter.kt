@@ -1,18 +1,24 @@
 package com.example.recyclerviewpeliculas
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import com.squareup.picasso.Picasso
 
 class PeliculasAdapter(private val FilmList: List<Pelicula>) : RecyclerView.Adapter<PeliculasAdapter.ViewHolder>() {
 
-
+    lateinit var context: Context;
     inner class ViewHolder(var itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var titleTextView: TextView = itemView.findViewById<TextView>(R.id.TituloPelicula);
-        var image: ImageView = itemView.findViewById<ImageView>(R.id.ImagenPelicula);
+       var titleTextView: TextView = itemView.findViewById<TextView>(R.id.tituloPelicula);
+        var image: ImageView = itemView.findViewById<ImageView>(R.id.imagenPelicula);
+
+
+
     };
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,8 +38,7 @@ class PeliculasAdapter(private val FilmList: List<Pelicula>) : RecyclerView.Adap
         textView.text = film.titulo;
 
         val image = holder.image;
-        image.setImageResource(R.drawable.film_placeholder);
-
+        image.setImageResource(R.drawable.film_placeholder)
     }
 
 
